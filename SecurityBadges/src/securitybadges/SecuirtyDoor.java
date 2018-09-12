@@ -4,14 +4,10 @@
  * and open the template in the editor.
  */
 package securitybadges;
-
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Scanner;
 import java.util.Stack;
-import securitybadges.Users;
-import java.util.List;
+
 
 
 /**
@@ -24,7 +20,7 @@ public class SecuirtyDoor {
     public static boolean mainLoop = true;
 
     //array for users
-    static LinkedList<Users> users = new LinkedList<Users>();
+    static LinkedList<Users> usersList = new LinkedList<Users>();
     
     //Created stacks for users
    public static Stack<String> stackOfUsers = new Stack<>();
@@ -49,6 +45,7 @@ public class SecuirtyDoor {
             System.out.println("1. Type in your code");
             System.out.println("2. Create a new user");
             System.out.println("3. See the last user ");
+            System.out.println("4. Show list of all users");
 
             int doorOptions = userInputScanner.nextInt();
 
@@ -64,6 +61,9 @@ public class SecuirtyDoor {
                     break;
                 case 3: 
                     LastUser();
+                    break;
+                case 4:
+                    showUsers();
                     break;
                 default:
                     System.out.println("Error please select the given options");
@@ -83,7 +83,7 @@ public class SecuirtyDoor {
         user.setName(userInputScanner.nextLine());
         System.out.println("Please enter 5 digit Passcode:");
         user.setPasscode(userInputScanner.nextInt());
-        users.add(user);
+        usersList.add(user);
     }//close FirstTimeUsers
 
     private static void UnlockingDoor() {
@@ -93,7 +93,7 @@ public class SecuirtyDoor {
 
         int typedCode = userInputScanner.nextInt();
         boolean doorUnlocked = false;
-        for (Users user : users) {
+        for (Users user : usersList) {
             if (typedCode == user.getPasscode()) {
                 
                 doorUnlocked = true;
@@ -112,6 +112,15 @@ public class SecuirtyDoor {
         //System.out.println("Last user walked in the door" +userStack.pop());
         
     }
+    
+    public static void showUsers(){
+       for (Users user:usersList){
+           System.out.println(user.getName());
+       }
+
+
+    }
+    
 
 
 
