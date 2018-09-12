@@ -4,11 +4,11 @@
  * and open the template in the editor.
  */
 package securitybadges;
+
 import java.util.LinkedList;
+import java.util.ListIterator;
 import java.util.Scanner;
 import java.util.Stack;
-
-
 
 /**
  *
@@ -21,20 +21,13 @@ public class SecuirtyDoor {
 
     //array for users
     static LinkedList<Users> usersList = new LinkedList<Users>();
-    
+
     //Created stacks for users
-   public static Stack<String> stackOfUsers = new Stack<>();
-   
-   public static String LastUser = Users.class.getName();
-   
- 
-     
-    
-    
-   
+    public static Stack<String> stackOfUsers = new Stack<>();
+
+    public static String LastUser = Users.class.getName();
 
     public static void main(String[] args) {
-         
 
         //loop for switch
         while (mainLoop) {
@@ -59,7 +52,7 @@ public class SecuirtyDoor {
                     FirstTimeUsers();
 
                     break;
-                case 3: 
+                case 3:
                     LastUser();
                     break;
                 case 4:
@@ -87,7 +80,7 @@ public class SecuirtyDoor {
     }//close FirstTimeUsers
 
     private static void UnlockingDoor() {
-        
+
         Scanner userInputScanner = new Scanner(System.in);
         System.out.println("Please Type in your code:");
 
@@ -95,9 +88,9 @@ public class SecuirtyDoor {
         boolean doorUnlocked = false;
         for (Users user : usersList) {
             if (typedCode == user.getPasscode()) {
-                
+
                 doorUnlocked = true;
-                
+
                 Object LastUser = stackOfUsers.push(user.getName());
                 break;
             }
@@ -106,26 +99,29 @@ public class SecuirtyDoor {
             System.out.println("Wrong Passcode Door is locked");
         }//close if 
     }// close UnlockingDoor
-    
-    public static void LastUser(){
-        System.out.println("Last Person:"+ stackOfUsers.peek());
+
+    public static void LastUser() {
+        System.out.println("Last Person:" + stackOfUsers.peek());
         //System.out.println("Last user walked in the door" +userStack.pop());
-        
-    }
-    
-    public static void showUsers(){
-       for (Users user:usersList){
-           System.out.println(user.getName());
-       }
-
 
     }
-    
 
+    public static void showUsers() {
+//       for (Users user:usersList){
+//           System.out.println(user.getName());
+//       }
+//       for (int u =0;u<usersList.size();u++){
+//           Users user = usersList.get(u);
+//           System.out.println(user.getName());
+//           
+//       }
+        ListIterator<Users> iter = usersList.listIterator();
+        while (iter.hasNext()) {
+            Users user = iter.next();
+            System.out.println(user.getName());
+        }
 
+    }
 
 }//close main
-    
-        
-    
 
