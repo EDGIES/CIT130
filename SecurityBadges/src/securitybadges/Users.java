@@ -15,8 +15,10 @@ import java.util.ArrayList;
  */
 public class Users {
     
-   private String name;
-    private  int passcode;
+   public static String name;
+      public static Long passcode;
+      
+
     
     
     
@@ -41,11 +43,11 @@ public class Users {
         this.name = name;
     }
 
-    public int getPasscode() {
+    public long getPasscode() {
         return passcode;
     }
 
-    public void setPasscode(int passcode) {
+    public void setPasscode(Long passcode) {
         this.passcode = passcode;
     }
     
