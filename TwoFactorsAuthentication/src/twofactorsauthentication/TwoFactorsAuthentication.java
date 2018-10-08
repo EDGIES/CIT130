@@ -77,16 +77,18 @@ public class TwoFactorsAuthentication {
         username = userInputScanner.nextLine();
         System.out.println("Please type In Password:");
         password = userInputScanner.nextLine();
-        if(usersMap.get(username).equals(usersMap.equals(password))){
+        
+        if(usersMap.containsKey(username) && usersMap.get(username).equals(password)){
             login = true;
             System.out.println("Unlocked");
             
         }else{
             System.out.println("Wrong Username or Password Please try again");
-            
+        login = false;
         }//close else
             
       
     }//close LoggingIn
+    
     
 }//close of class

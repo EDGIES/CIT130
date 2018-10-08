@@ -10,8 +10,8 @@ package twofactorsauthentication;
  * @author egyedg
  */
 public class UsernameAndPassword {
-       public static String username;
-      public static String password;
+       public  String username;
+      public  String password;
       
     
 }
