@@ -80,7 +80,26 @@ public class TwoFactorsAuthentication {
         
         if(usersMap.containsKey(username) && usersMap.get(username).equals(password)){
             login = true;
-            System.out.println("Unlocked");
+               RandomNumberGenerator test1 = new RandomNumberGenerator();
+            test1.run();
+            System.out.println(test1.play());
+           
+            
+            System.out.println("Please Type In your code");
+            userInputScanner.hasNextBigInteger();
+            
+            if(userInputScanner.equals(test1.play())){
+                System.out.println("You are logged in");
+                
+            }else{
+                System.out.println("Wrong code");
+            }
+            
+         
+            
+           
+            
+           
             
         }else{
             System.out.println("Wrong Username or Password Please try again");
