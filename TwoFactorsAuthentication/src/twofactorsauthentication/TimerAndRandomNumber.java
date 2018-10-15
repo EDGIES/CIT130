@@ -17,12 +17,16 @@ import java.util.Timer;
  */
 
 class RandomNumberGenerator extends TimerTask { 
-    
+    public int n;
    
     public int play() 
     { 
          Random rand = new Random();
         int n = rand.nextInt(99999999) + 11111111;
+        Timer timer = new Timer(); 
+        TimerTask task = new RandomNumberGenerator(); 
+          
+        timer.schedule(task, 1, 15000); 
         
       
         return  n;
@@ -40,19 +44,7 @@ class RandomNumberGenerator extends TimerTask {
 
  } 
   
-public class TimerAndRandomNumber { 
-    public int n;
-    public static void main(String[] args){ 
-          
-        Timer timer = new Timer(); 
-        TimerTask task = new RandomNumberGenerator(); 
-          
-        timer.schedule(task, 1, 15000); 
-        
-          
-    }//close main 
-    
-}//close TimerAndRandomNumber class
+
 
  
   

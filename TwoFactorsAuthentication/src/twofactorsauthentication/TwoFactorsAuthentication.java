@@ -82,13 +82,18 @@ public class TwoFactorsAuthentication {
             login = true;
                RandomNumberGenerator test1 = new RandomNumberGenerator();
             test1.run();
-            System.out.println(test1.play());
+            int code2 =test1.play();
+            System.out.println(code2);
+            
            
             
             System.out.println("Please Type In your code");
-            userInputScanner.hasNextBigInteger();
+           int userInputCode = userInputScanner.nextInt();
             
-            if(userInputScanner.equals(test1.play())){
+           
+           
+            
+            if(userInputCode== code2){
                 System.out.println("You are logged in");
                 
             }else{
