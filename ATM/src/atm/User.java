@@ -11,8 +11,11 @@ import java.math.BigDecimal;
  *
  * @author grant.egyed
  */
-public class Account {
-  private String accountType;
-  private float accountNumber;
-  private BigDecimal accountBalance; 
+public class User {
+    private String accountHolderFirstName;
+    private String accountHolderLastName;
+    private int pin;
+    private BigDecimal cash;
+    
+    
 }

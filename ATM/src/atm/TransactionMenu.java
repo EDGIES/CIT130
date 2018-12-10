@@ -5,14 +5,16 @@
  */
 package atm;
 
-import java.math.BigDecimal;
-
 /**
- *
+ * This Class will allow you
+ * to withdrawal, Deposit,
+ * See amount,and FashCash
+ * 
  * @author grant.egyed
  */
-public class Account {
-  private String accountType;
-  private float accountNumber;
-  private BigDecimal accountBalance; 
+public class TransactionMenu {
+    private int cash;
+    private String receipt;
+    
+    
 }

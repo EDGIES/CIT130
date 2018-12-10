@@ -11,8 +11,8 @@ import java.math.BigDecimal;
  *
  * @author grant.egyed
  */
-public class Account {
-  private String accountType;
-  private float accountNumber;
-  private BigDecimal accountBalance; 
+public class YourWallet {
+    private BigDecimal inHandCash;
+    private float card;
+    
 }

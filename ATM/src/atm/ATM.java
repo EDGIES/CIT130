@@ -6,25 +6,22 @@
 package atm;
 
 import java.util.Scanner;
+import atm.Account;
 
 /**
  *
  * @author grant.egyed
  */
-public class ATM {
+public class ATM extends User{
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
+   
     
-    public static void CreatingAnAccount(){
+    public CreatingAnAccount extends User{
        Account accountHolder = new Account();
         System.out.println("Please Enter your First Name");
         Scanner userInputScanner = new Scanner (System.in);
         accountHolder.
+        
     }
     
 }
