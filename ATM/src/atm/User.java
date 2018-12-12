@@ -12,10 +12,13 @@ import java.math.BigDecimal;
  * @author grant.egyed
  */
 public class User {
-    private String accountHolderFirstName;
-    private String accountHolderLastName;
-    private int pin;
-    private BigDecimal cash;
+    public String accountHolderFirstName;
+    public String accountHolderLastName;
+    public int pin;
+    public BigDecimal cash;
+    
+    
+    
     
     
 }
